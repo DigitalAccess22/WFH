@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoInsight 2025 - Your Guide to Cryptocurrency Investments</title>
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #00cec9;
+            --accent: #fdcb6e;
+            --dark: #2d3436;
+            --light: #f5f6fa;
+            --success: #00b894;
+            --danger: #d63031;
+            --warning: #e17055;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        nav {
+            background-color: var(--dark);
+            padding: 1rem;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .hero {
+            background: url('https://via.placeholder.com/1200x400') center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 0.8rem 2rem;
+            margin-top: 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-image {
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary);
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--success);
+            margin-bottom: 0.5rem;
+        }
+        
+        .market-cap {
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        
+        .prediction {
+            background-color: #f0f8ff;
+            padding: 1rem;
+            border-left: 4px solid var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .prediction h4 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .read-more {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+        
+        .read-more:hover {
+            border-color: var(--primary);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: var(--accent);
+            margin: 0.5rem auto;
+        }
+        
+        .newsletter {
+            background-color: var(--primary);
+            padding: 3rem 1rem;
+            text-align: center;
+            color: white;
+        }
+        
+        .newsletter-form {
+            max-width: 600px;
+            margin: 1.5rem auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form button {
+            background-color: var(--accent);
+            color: var(--dark);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #f0b941;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 1rem 1rem;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 1.5rem;
+            padding: 0 1rem;
+            text-align: left;
+        }
+        
+        .footer-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            color: white;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #444;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary);
+        }
+        
+        .copyright {
+            border-top: 1px solid #444;
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        /* Privacy Policy, Terms & Conditions, Disclaimer pages */
+        .page-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .page-content h2 {
+            color: var(--primary);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .page-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .page-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+        }
+        
+        .submit-button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-button:hover {
+            background-color: #5849c2;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .footer-section {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Crypto<span>Insight</span></div>
+        <p>Your trusted guide to cryptocurrency investments in 2025</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#top-cryptos">Top Cryptocurrencies</a></li>
+            <li><a href="#predictions">2025 Predictions</a></li>
+            <li><a href="#analysis">Market Analysis</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Best Cryptocurrencies to Invest in 2025</h1>
+            <p>Explore our expert analysis and price predictions for the most promising digital assets in today's market.</p>
+            <a href="#top-cryptos" class="cta-button">Discover Top Picks</a>
+        </div>
+    </div>
+    
+    <div class="container" id="top-cryptos">
+        <h2 class="section-title">Top Cryptocurrencies for 2025</h2>
+        
+        <div class="grid">
+            <div class="card">
+                <div class="card-image">₿</div>
+                <div class="card-content">
+                    <h3 class="card-title">Bitcoin (BTC)</h3>
+                    <p class="price">Current Price: $128,500</p>
+                    <p class="market-cap">Market Cap: $2.5 Trillion</p>
+                    <div class="prediction">
+                        <h4>2025 Price Prediction</h4>
+                        <p>$150,000 - $180,000</p>
+                    </div>
+                    <p>Bitcoin maintains its position as the leading cryptocurrency with increasing institutional adoption and recognition as a digital store of value.</p>
+                    <a href="#" class="read-more">Read Detailed Analysis →</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">Ξ</div>
+                <div class="card-content">
+                    <h3 class="card-title">Ethereum (ETH)</h3>
+                    <p class="price">Current Price: $9,800</p>
+                    <p class="market-cap">Market Cap: $1.2 Trillion</p>
+                    <div class="prediction">
+                        <h4>2025 Price Prediction</h4>
+                        <p>$12,000 - $15,000</p>
+                    </div>
+                    <p>Following the successful transition to proof-of-stake and continued development of the Ethereum ecosystem, ETH remains a dominant force in smart contracts.</p>
+                    <a href="#" class="read-more">Read Detailed Analysis →</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">⋮</div>
+                <div class="card-content">
+                    <h3 class="card-title">Solana (SOL)</h3>
+                    <p class="price">Current Price: $725</p>
+                    <p class="market-cap">Market Cap: $330 Billion</p>
+                    <div class="prediction">
+                        <h4>2025 Price Prediction</h4>
+                        <p>$850 - $1,200</p>
+                    </div>
+                    <p>Solana has established itself as a major layer-1 solution with impressive transaction speeds and growing ecosystem of DeFi and NFT applications.</p>
+                    <a href="#" class="read-more">Read Detailed Analysis →</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">◎</div>
+                <div class="card-content">
+                    <h3 class="card-title">Polkadot (DOT)</h3>
+                    <p class="price">Current Price: $95</p>
+                    <p class="market-cap">Market Cap: $125 Billion</p>
+                    <div class="prediction">
+                        <h4>2025 Price Prediction</h4>
+                        <p>$120 - $180</p>
+                    </div>
+                    <p>Polkadot's interoperability protocol has been widely adopted, connecting various blockchains and enabling cross-chain functionality.</p>
+                    <a href="#" class="read-more">Read Detailed Analysis →</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">A</div>
+                <div class="card-content">
+                    <h3 class="card-title">Cardano (ADA)</h3>
+                    <p class="price">Current Price: $4.50</p>
+                    <p class="market-cap">Market Cap: $160 Billion</p>
+                    <div class="prediction">
+                        <h4>2025 Price Prediction</h4>
+                        <p>$6 - $8</p>
+                    </div>
+                    <p>Cardano's peer-reviewed approach has led to a robust platform for decentralized applications with strong adoption in developing markets.</p>
+                    <a href="#" class="read-more">Read Detailed Analysis →</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">⚡</div>
+                <div class="card-content">
+                    <h3 class="card-title">Chainlink (LINK)</h3>
+                    <p class="price">Current Price: $65</p>
+                    <p class="market-cap">Market Cap: $75 Billion</p>
+                    <div class="prediction">
+                        <h4>2025 Price Prediction</h4>
+                        <p>$80 - $110</p>
+                    </div>
+                    <p>As the leading oracle provider, Chainlink has become essential infrastructure for the entire blockchain ecosystem, connecting smart contracts to real-world data.</p>
+                    <a href="#" class="read-more">Read Detailed Analysis →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container" id="predictions">
+        <h2 class="section-title">2025 Market Outlook</h2>
+        
+        <div class="page-content">
+            <p>The cryptocurrency market in 2025 has matured significantly from previous cycles, with several key trends shaping the landscape:</p>
+            
+            <h2>Institutional Adoption</h2>
+            <p>Major financial institutions now allocate 5-10% of their portfolios to digital assets, with Bitcoin and Ethereum ETFs surpassing $500 billion in assets under management. This mainstream acceptance has stabilized market volatility while creating sustained demand.</p>
+            
+            <h2>Regulatory Clarity</h2>
+            <p>The regulatory framework for cryptocurrencies has matured globally, with clear guidelines in most major economies. This has encouraged institutional participation while protecting retail investors from fraudulent projects.</p>
+            
+            <h2>Central Bank Digital Currencies (CBDCs)</h2>
+            <p>Over 30 countries have launched CBDCs, creating new opportunities for blockchain technology while also increasing competition for certain cryptocurrency use cases.</p>
+            
+            <h2>DeFi 3.0</h2>
+            <p>Decentralized finance has evolved with improved security, scalability, and user experience. Total value locked in DeFi protocols has reached $500 billion, with real-world asset tokenization emerging as a major growth sector.</p>
+            
+            <h2>Web3 Integration</h2>
+            <p>Web3 technologies have achieved meaningful integration with traditional platforms, creating hybrid systems that leverage blockchain benefits while maintaining familiar user experiences.</p>
+        </div>
+    </div>
+    
+    <div class="newsletter">
+        <h2>Stay Updated with CryptoInsight</h2>
+        <p>Subscribe to our newsletter for the latest cryptocurrency analysis, predictions, and investment strategies.</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+    
+    <footer>
+        <div class="footer-links">
+            <div class="footer-section">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#top-cryptos">Top Cryptocurrencies</a></li>
+                    <li><a href="#predictions">2025 Predictions</a></li>
+                    <li><a href="#analysis">Market Analysis</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title">Legal</h3>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="disclaimer.html">Disclaimer</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title">Contact</h3>
+                <ul>
+                    <li><a href="contact.html">Contact Form</a></li>
+                    <li><a href="mailto:cryptoinfo@gmail.com">cryptoinfo@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="social-icons">
+            <a href="#" class="social-icon">f</a>
+            <a href="#" class="social-icon">t</a>
+            <a href="#" class="social-icon">in</a>
+            <a href="#" class="social-icon">ig</a>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 CryptoInsight. All rights reserved.</p>
+            <p>Disclaimer: The information provided on this website does not constitute investment advice, financial advice, trading advice, or any other sort of advice.</p>
+        </div>
+    </footer>
+</body>
+</html>
